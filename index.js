@@ -13,7 +13,7 @@ app.use(express.json());
 
 const io = require("socket.io")(server, {
   cors: {
-    origin: process.env.NODE_ENV === "development" ? "http://localhost:5173":"https://tictactoe-vqwd.onrender.com/",
+    origin: "https://tictactoe-vqwd.onrender.com",
   },
 });
 // io.origins('*:*')
