@@ -13,7 +13,7 @@ app.use(express.json());
 
 const io = require("socket.io")(server, {
   cors: {
-    origin: "https://tictactoe-vqwd.onrender.com",
+    origin: "*",
   },
 });
 // io.origins('*:*')
