@@ -6,13 +6,14 @@ let server = http.createServer(app);
 const cors = require("cors");
 const { nanoid } = require("nanoid");
 const path = require("path");
+require("dotenv").config();
 
 app.use(cors());
 app.use(express.json());
 
 const io = require("socket.io")(server, {
   cors: {
-    origin: "http://localhost:5173",
+    origin: process.env.NODE_ENV === "development" ? "http://localhost:5173":"https://tictactoe-vqwd.onrender.com/",
   },
 });
 // io.origins('*:*')
